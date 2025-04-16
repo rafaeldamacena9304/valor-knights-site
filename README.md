@@ -67,15 +67,7 @@ Antes de executar, certifique-se de ter instalado:
    pip install -r requirements.txt
    ```
 
-3. **Configurar variáveis de ambiente**
-
-   ```bash
-   export FLASK_APP=app.py
-   export FLASK_ENV=development
-   # Defina RCON_HOST, RCON_PORT, RCON_PASSWORD conforme seu servidor
-   ```
-
-4. **Executar o aplicativo**
+3. **Executar o aplicativo**
 
    ```bash
    python app.py
