@@ -1,0 +1,81 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title}}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/base.css">
+        <link rel="icon" href="/static/assets/logo.png" type="image/png">
+    </head>
+    <body>
+        
+        <div id="cookie-popup" class="popup">
+            <div class="popup-content">
+                <p>Nosso site utiliza cookies para uma melhor experiência. Ao utilizar, você concorda com isso.</p>
+                <button id="popup-ok">OK</button>
+            </div>
+        </div>
+        <main>
+            <audio style="display:hidden;" id="click-sound" src="/static/assets/click-sound.mp3" preload="auto"></audio>
+            <audio style="display:hidden;" id="click-sound1" src="/static/assets/click-sound.mp3" preload="auto"></audio>
+            <audio style="display:hidden;" id="hover-sound3" src="/static/assets/hover-sound3.mp3" preload="auto"></audio>
+            <audio style="display:hidden;" id="hover-sound2" src="/static/assets/hover-sound2.mp3" preload="auto"></audio>
+            <audio style="display:hidden;" id="hover-sound22" src="/static/assets/hover-sound2.mp3" preload="auto"></audio>
+            <audio style="display:hidden;" id="hover-sound" src="/static/assets/hover-sound1.mp3" preload="auto"></audio>
+            <div class="header1">
+                <div class="header1-left tooltip">
+                    <div id="copyIP" class="header1-text-left click-element">
+                        <span class="header-title">Jogue Agora!</span>
+                        <span class="header-text">Clique para copiar o IP!</span>
+                    </div>
+                    <div class="header1-left-img">
+                        <img src="/static/assets/play.svg">
+                    </div>
+                </div>
+                <div class="header1-center">
+                    <img src="/static/assets/logo.png">
+                </div>
+                <div class="header1-right click-element1">
+                    <div class="header1-right-img">
+                        <img src="/static/assets/discord.svg">
+                    </div>
+                    <a style="text-decoration:none;color:white;" href="https://discord.gg/ukj8sEB8bm" target="_blank">
+                        <div class="header1-text-right">
+                            <span class="header-title">Junte-se a nós!</span>
+                            <span class="header-text">Clique para entrar!</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <p class="header-maintitle">Valor Knights</p>
+            <div class="header2">
+                <div class="nav-link-left">
+                    <a href="{{url_for('index')}}" class="nav-link">
+                        <img src="/static/assets/inicio.svg">Início
+                    </a>
+                    <a href="{{url_for('loja')}}" class="nav-link hover-element3">
+                        <img src="/static/assets/loja.svg">Loja
+                    </a>
+                    <a href="mailto:suporte@valorknight.com.br" target="_blank" class="nav-link">
+                        <img src="/static/assets/faleconosco.svg">Fale Conosco
+                    </a>
+                    <a href="{{url_for('vip')}}" class="nav-link vip-link hover-element">
+                        <img src="/static/assets/vip.svg"><span style="text-transform:uppercase;color:#FDE400;">Comprar Vip</span>
+                    </a>
+                </div>
+                <div class="nav-link-right">
+                    <a href="#" class="nav-link" id="loginLink">
+                        jogar.valorknight.com.br
+                    </a>
+                </div>
+            </div>
+        </main>
+        <script src="/static/sounds.js"></script>
+        {% block base %}
+        {% endblock %}
+    </body>
+    </html>

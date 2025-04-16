@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block base %}
+<div class="lojamain">
+    <div class="loja-title">
+        <img src="/static/assets/zombie.gif">
+        <p>Loja</p>
+        <img src="/static/assets/zombie.gif">
+    </div>
+    <p class="loja-subtitle">Farms</p>
+    <div class="produtos-1">
+        {% for produto in produtos %}
+            <a href="{{ url_for('produto', produto_nome=produto.nome) }}">
+                <div class="produto">
+                    <img src="{{ produto.imagem }}" alt="{{produto.nome}}">
+                    <p class="produto-nome">{{produto.nome}}</p>
+                    <p class="produto-preco">R${{produto.preco}}</p>
+                    <button class="buy-button-loja">QUERO ESSA!</button>
+                </div>
+            </a>
+            {% endfor %}
+            <a href="#">
+                <div class="produto">
+                    <img src="/static/assets/embreve.png" alt="Em breve">
+                    <p class="produto-nome">Em breve!</p>
+                    <p class="produto-preco">R$-</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="produto">
+                    <img src="/static/assets/embreve.png" alt="Em breve">
+                    <p class="produto-nome">Em breve!</p>
+                    <p class="produto-preco">R$-</p>
+                </div>
+            </a>
+    </div>
+    <div class="produtos-2">
+        {% for set in sets %}
+        <a href="{{url_for('produto', produto_nome=set.nome)}}">
+            <div class="produto">
+                <img src="{{ set.imagem }}" alt="{{set.nome}}">
+                <p class="produto-nome">{{set.nome}}</p>
+                <p class="produto-preco">R$ <span style="color:rgb(0, 204, 0)" >{{set.preco}}</span></p>
+                <button class="buy-button-loja">QUERO ESSE!</button>
+            </div>
+        </a>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}

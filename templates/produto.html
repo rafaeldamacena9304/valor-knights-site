@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block base %}
+<div class="produtomain">
+    <div class="produto-title">
+        <img src="/static/assets/warden.gif">
+        <p class="loja-title">{{produto.nome}}</p>
+        <img src="/static/assets/warden.gif">
+    </div>
+    <div class="product-columns">
+        <div class="produto-text">
+            <p class="loja-subtitle">Descrição</p>
+            <p>{{produto.descricao}}</p>
+        {% if tipo == 'Farm' %}
+            <p>Automática: <span style="color:rgb(0, 177, 0)">{{ produto.automatica }}</span></p>
+            <p>Rendimento Manual: <span style="color:#FDE400">{{ produto.rendimentomanual }}</span>/h Barras de Ouro</p>
+            <p>Rendimento Automático: <span style="color:#FDE400">{{ produto.rendimentoautomatico }}</span>/h Barras de Ouro</p>
+        {% elif tipo == 'Set' %}
+            <p><span style="color:rgb(0, 177, 0)">Habilidades: </span>{{ produto.habilidades }}</p>
+            <p><span style="color:rgb(236, 47, 0)">Desvantagens: </span>{{ produto.debuff }}</p>
+            <p><span style="color:#FDE400">Armadura: </span>{{ produto.armadura }}</p>
+            <p><span style="color:#FDE400">Arma: </span>{{ produto.arma }}</p>
+        {% endif %}
+        </div>
+        <div class="div-video">
+            <video width="400" controls  autoplay loop muted>
+                <source src="{{produto.video}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="buy-button">COMPRAR!</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

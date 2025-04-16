@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block base %}
+<div class="vipmain">
+    <div class="vip-img">
+        <img class="vip-img-self" src="/static/assets/character.png">
+    </div>
+    <div class="vip-text">
+        <p class="vip-title">
+            Comprar Vip
+        </p>
+        <p class="vip-text">
+            Adquira seu VIP agora e tenha acesso à inúmeras vantagens!
+        </p>
+        <ol>
+            <li>Kit <span style="color:#FDE400;">Vip Inicial</span> com Set Completo P4;</li>
+            <li>Kit <span style="color:#FDE400;">Vip Diário</span> com Itens Essenciais;</li>
+            <li>Tag <span style="color:#FDE400;">"Lendário"</span> Exclusiva!</li>
+            <li>Escreva <span style="color:#FDE400;">Colorido</span> no Chat</li>
+            <li>Tenha até <span style="color:#FDE400;">03 Terrenos</span></li>
+            <li>Conserte Equipamentos com <span style="color:#FDE400;">/fix</span></li>
+            <li>Descanse com <span style="color:#FDE400;">/descansar</span> e livre-se de camas!</li>
+            <li>Acesso à <span style="color:#FDE400;">Loja VIP </span>com Descontos e Itens Exclusivos!</li>
+            <li>Acesso à <span style="color:#FDE400;">Mina VIP</span>, Recheada com Diamantes e Blocos de Ouro!</li>
+        </ol>
+        <div style="display:flex;flex-direction:column;">
+            <form class="purchase-form" method="post" action="{{ url_for('purchase') }}">
+                <label for="username">Nickname no Servidor:</label>
+                <input type="text" id="username" name="username" required>
+                <button type="submit" name="plan_type" value="mensal" class="buy-button1 hover-element2">Comprar (Mensal R$39,90)</button>
+                <button type="submit" name="plan_type" value="trimestral" class="buy-button2 hover-element22">Comprar (Trimestral R$99,90)</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
